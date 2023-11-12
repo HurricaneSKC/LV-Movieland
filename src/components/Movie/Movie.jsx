@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import starredSlice from '../../store/starredSlice'
 import watchLaterSlice from '../../store/watchLaterSlice'
 import placeholder from '../../assets/not-found-500X750.jpeg'
+import './Movie.scss'
 
 const Movie = ({ movie, viewTrailer, closeCard }) => {
 

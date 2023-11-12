@@ -1,7 +1,7 @@
 import { Link, NavLink } from "react-router-dom"
 import { useSelector } from 'react-redux'
 
-import '../styles/header.scss'
+import './header.scss'
 
 const Header = ({ searchMovies }) => {
   

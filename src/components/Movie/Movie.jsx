@@ -4,25 +4,17 @@ import watchLaterSlice from '../../store/watchLaterSlice'
 import placeholder from '../../assets/not-found-500X750.jpeg'
 import './Movie.scss'
 
-const Movie = ({ movie, viewTrailer, closeCard }) => {
+const Movie = ({ movie, viewTrailer }) => {
 
-    const state = useSelector((state) => state)
-    const { starred, watchLater } = state
+    const { starred, watchLater } = useSelector((state) => state)
     const { starMovie, unstarMovie } = starredSlice.actions
     const { addToWatchLater, removeFromWatchLater } = watchLaterSlice.actions
 
     const dispatch = useDispatch()
 
-    const myClickHandler = (e) => {
-        if (!e) var e = window.event
-        e.cancelBubble = true
-        if (e.stopPropagation) e.stopPropagation()
-        e.target.parentElement.parentElement.classList.remove('opened')
-    }
-
     return (
         <div className="wrapper">
-        <div className="card" onClick={(e) => e.currentTarget.classList.add('opened')} >
+        <div className="card" >
             <div className="card-body text-center">
                 <div className="overlay" />
                 <div className="info_panel">
@@ -60,11 +52,7 @@ const Movie = ({ movie, viewTrailer, closeCard }) => {
                 </div>
                 <img className="center-block" src={(movie.poster_path) ? `https://image.tmdb.org/t/p/w500/${movie.poster_path}` : placeholder} alt="Movie poster" />
             </div>
-            <h6 className="title mobile-card">{movie.title}</h6>
             <h6 className="title">{movie.title}</h6>
-            <button type="button" className="close" onClick={(e) => myClickHandler(e)} aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
         </div>
     </div>        
     )

@@ -7,7 +7,6 @@ const YoutubePlayer = ({ movieId }) =>{
   const { getMovie, videoKey, isLoading, error } = useMovieFetch();
 
   useEffect(() => {
-    console.log(`Fetching movie details for ID: ${movieId}`);
     getMovie(movieId);
   }, []);
 

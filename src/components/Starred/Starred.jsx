@@ -1,8 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux'
 import { Link } from 'react-router-dom'
-import starredSlice from '../data/starredSlice'
-import Movie from './Movie'
-import '../styles/starred.scss'
+import starredSlice from '../../store/starredSlice'
+import Movie from '../Movie'
+import './starred.scss'
 
 const Starred = ({viewTrailer}) => {
 
@@ -15,7 +15,7 @@ const Starred = ({viewTrailer}) => {
     <div className="starred" data-testid="starred">
       {starred.starredMovies.length > 0 && (<div data-testid="starred-movies" className="starred-movies">
         <h6 className="header">Starred movies</h6>
-        <div className="row">
+        <div className="movies-container">
         {starred.starredMovies.map((movie) => (
           <Movie 
             movie={movie} 

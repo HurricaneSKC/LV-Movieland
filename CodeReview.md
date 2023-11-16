@@ -56,4 +56,4 @@ Notes:
 ## Things to consider
 
 - If the project is due to become larger consider the idea of implementing typescript as it provides type safety which can help to catch errors during development
-- Consider using a linter to sort import declarations 
+- Consider using a linter e.g. ESLint / Prettier
